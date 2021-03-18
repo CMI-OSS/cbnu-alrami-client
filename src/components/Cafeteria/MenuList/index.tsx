@@ -3,7 +3,7 @@ import dayjs from 'dayjs'
 
 import Time from './Time'
 import Menu from './Menu'
-import { GET_DATE_STATE } from '@src/apollo/quries'
+import { GET_CAFETERIA_NAME_STATE, GET_DATE_STATE } from '@src/apollo/quries'
 
 interface Menus {
   date: string
@@ -33,10 +33,11 @@ const GET_MENU = gql`
 
 function MenuList() {
   const { data: dateData } = useQuery(GET_DATE_STATE)
+  const { data: nameDate } = useQuery(GET_CAFETERIA_NAME_STATE)
   const date = dayjs(dateData.date)
 
   const { data } = useQuery<MenuData>(GET_MENU, {
-    variables: { name: '본관', date: `${date.year()}-${date.month() + 1}-${date.date()}` },
+    variables: { name: nameDate.cafeteriaName, date: `${date.year()}-${date.month() + 1}-${date.date()}` },
   })
 
   const menuDetail = {
