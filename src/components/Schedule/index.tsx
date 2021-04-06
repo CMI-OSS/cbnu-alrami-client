@@ -1,5 +1,11 @@
+import Calendar from './Calendar'
+
 function Schedule() {
-  return <div>테스트</div>
+  return (
+    <div>
+      <Calendar />
+    </div>
+  )
 }
 
 export default Schedule
