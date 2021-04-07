@@ -1,15 +1,23 @@
 import dayjs from 'dayjs'
 
-export interface calendarProps {
+export interface Week {
+  numOfWeek: number
+  days: Day[]
+}
+
+export interface Day {
   date: number
   day: number
   month: number
   year: number
 }
 
-function calendar(date: Date): calendarProps[][] {
-  const fullMonth: calendarProps[] = []
-  const parsingFullMonth: calendarProps[][] = Array.from(Array(6), () => Array(7))
+function calendar(date: Date): Week[] {
+  const fullMonth: Day[] = []
+  const parsingFullMonth: Week[] = Array.from(Array(6), (_,index) => ({
+    numOfWeek: index + 1,
+    days: Array(7),
+  }))
   const month = date.getMonth()
   const year = date.getFullYear()
 
@@ -51,7 +59,7 @@ function calendar(date: Date): calendarProps[][] {
   let firstIdx = 0
   for (let secondIdx = 0; secondIdx < fullMonth.length; secondIdx += 1) {
     const day = fullMonth[secondIdx]
-    parsingFullMonth[firstIdx][day.day] = day
+    parsingFullMonth[firstIdx].days[day.day] = day
     if (day.day === 6) firstIdx += 1
   }
 

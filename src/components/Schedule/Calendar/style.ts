@@ -5,7 +5,7 @@ const Calendar = styled.div`
     display: flex;
     justify-content: center;
     margin-top: 1.5rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.8rem;
     font-size: 1.1rem;
     font-weight: 700;
 
@@ -20,27 +20,26 @@ const Calendar = styled.div`
 
   .calendar {
     width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 0.7rem;
+    font-size: 0.8rem;
 
     .weekdays {
       color: gray;
-      border-bottom: 1px solid gray;
 
       th {
         padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
+        padding-bottom: 0.7rem;
         width: 14.28%;
+        border-bottom: 2px solid lightgray;
       }
-    }
-
-    .style {
-      margin-bottom: 0.5rem;
     }
 
     .days {
       .day {
         width: 14.28%;
         text-align: center;
-        padding: 0.5rem;
+        padding: 0.2rem;
 
         &.other-month {
           color: gray;
@@ -56,8 +55,8 @@ const Calendar = styled.div`
             transform: translate(-50%, -50%);
             display: inline-block;
             position: absolute;
-            width: 2rem;
-            height: 2rem;
+            width: 1.8rem;
+            height: 1.8rem;
             border-radius: 50%;
             background-color: lightgray;
             z-index: -1;
