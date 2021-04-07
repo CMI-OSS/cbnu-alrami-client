@@ -5,7 +5,7 @@ import Time from './Time'
 import Menu from './Menu'
 import MenuEmpty from '@src/components/Cafeteria/MenuList/MenuEmpty'
 import Loading from '@components/shared/Loading'
-import { GET_CAFETERIA_NAME_STATE, GET_DATE_STATE, GET_MENU } from '@src/apollo/quries'
+import { GET_CAFETERIA_NAME_STATE, GET_CAFETERIA_DATE_STATE, GET_MENU } from '@src/apollo/quries'
 
 interface Menus {
   date: string
@@ -20,7 +20,7 @@ interface MenuData {
 }
 
 function MenuList() {
-  const { data: dateState } = useQuery(GET_DATE_STATE)
+  const { data: dateState } = useQuery(GET_CAFETERIA_DATE_STATE)
   const { data: nameState } = useQuery(GET_CAFETERIA_NAME_STATE)
   const date = dayjs(dateState.date)
 

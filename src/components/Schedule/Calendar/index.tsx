@@ -1,24 +1,31 @@
 import { useReactiveVar } from '@apollo/client'
-
 import StyledCalendar from './style'
-import { yearMonthFormatDate } from '@src/utils/day'
+import { yearMonthFormatDate, dateMinus, datePlus } from '@src/utils/day'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
-import { dateVar } from '@src/apollo/cache'
+import { calendarDateVar } from '@src/apollo/cache'
 import { calendar, Week, getDayClassName } from '@src/utils/calendar'
 import { Days } from '@src/constants'
-import { plus, minus } from '@src/hooks/useDay'
 
 function Calendar() {
-  const date = useReactiveVar(dateVar)
+  const date = useReactiveVar(calendarDateVar)
   const fullMonth: Week[] = calendar(date)
   const DAYS = [Days.Sunday, Days.Monday, Days.Thuesday, Days.Wednesday, Days.Thursday, Days.Friday, Days.Saturday]
+
+  const plus = () => {
+    const newDate = datePlus(calendarDateVar(), 'month').toDate()
+    calendarDateVar(newDate)
+  }
+  const minus = () => {
+    const newDate = dateMinus(calendarDateVar(), 'month').toDate()
+    calendarDateVar(newDate)
+  }
 
   return (
     <StyledCalendar>
       <div className="selector">
-        <IoIosArrowBack className="icon" onClick={() => minus('month')} />
+        <IoIosArrowBack className="icon" onClick={minus} />
         {yearMonthFormatDate(date)}
-        <IoIosArrowForward className="icon" onClick={() => plus('month')} />
+        <IoIosArrowForward className="icon" onClick={plus} />
       </div>
       <table className="calendar">
         <thead>
@@ -34,7 +41,7 @@ function Calendar() {
               {week.days.map(day => (
                 <td
                   key={`${day.month}-${day.date}`}
-                  className={getDayClassName(date,day.year, day.month, day.date, day.day)}>
+                  className={getDayClassName(date, day.year, day.month, day.date, day.day)}>
                   {day.date}
                 </td>
               ))}
