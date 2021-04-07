@@ -1,18 +1,18 @@
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi'
-import dayjs from 'dayjs'
 
 import StyledArrow from './style'
 import { dateVar } from '@src/apollo/cache'
+import { dateMinus, datePlus } from '@src/utils/day'
 
 function Arrow({ direction }: { direction: string }) {
   const plus = () => {
-    const newDate = dayjs(dateVar()).add(1, 'day')
-    dateVar(newDate.toDate())
+    const newDate = datePlus(dateVar(), 'day').toDate()
+    dateVar(newDate)
   }
 
   const minus = () => {
-    const newDate = dayjs(dateVar()).subtract(1, 'day')
-    dateVar(newDate.toDate())
+    const newDate = dateMinus(dateVar(), 'day').toDate()
+    dateVar(newDate)
   }
   return (
     <StyledArrow>
