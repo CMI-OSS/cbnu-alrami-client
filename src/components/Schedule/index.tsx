@@ -1,10 +1,15 @@
 import Calendar from './Calendar'
+import Label from './Label'
+import ScheduleLabel from './style'
 
 function Schedule() {
   return (
-    <div>
+    <ScheduleLabel>
       <Calendar />
-    </div>
+      <div className="timeline">
+        <Label />
+      </div>
+    </ScheduleLabel>
   )
 }
 
