@@ -22,8 +22,7 @@ interface MenuData {
 function MenuList() {
   const { data: dateState } = useQuery(GET_CAFETERIA_DATE_STATE)
   const { data: nameState } = useQuery(GET_CAFETERIA_NAME_STATE)
-  const date = dayjs(dateState.date)
-
+  const date = dayjs(dateState.cafeteriaDate)
   const { loading, data: menu } = useQuery<MenuData>(GET_MENU, {
     variables: { name: nameState.cafeteriaName, date: `${date.year()}-${date.month() + 1}-${date.date()}` },
   })

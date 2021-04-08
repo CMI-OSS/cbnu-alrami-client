@@ -1,10 +1,14 @@
 import styled from 'styled-components'
 
 const Calendar = styled.div`
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  padding-top: 1.5rem;
+
   .selector {
     display: flex;
     justify-content: center;
-    margin-top: 1.5rem;
     margin-bottom: 0.8rem;
     font-size: 1.1rem;
     font-weight: 700;
@@ -20,6 +24,7 @@ const Calendar = styled.div`
 
   .calendar {
     width: 100%;
+    min-height: 15rem;
     border-collapse: separate;
     border-spacing: 0 0.7rem;
     font-size: 0.8rem;

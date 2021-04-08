@@ -1,15 +1,21 @@
 import Calendar from './Calendar'
 import Label from './Label'
-import ScheduleLabel from './style'
+import StyledSchedule from './style'
 
 function Schedule() {
   return (
-    <ScheduleLabel>
+    <StyledSchedule>
       <Calendar />
       <div className="timeline">
-        <Label />
+        <p>학사일정</p>
+        <Label content="1" startDate="2021-04-01T00:00:00.000Z" endDate="2021-04-23T00:00:00.000Z" />
+        <Label content="2" startDate="2021-04-01T00:00:00.000Z" endDate="2021-04-23T00:00:00.000Z" />
+        <Label content="3" startDate="2021-04-01T00:00:00.000Z" endDate="2021-04-23T00:00:00.000Z" />
+        <Label content="4" startDate="2021-04-01T00:00:00.000Z" endDate="2021-04-23T00:00:00.000Z" />
+        <Label content="5" startDate="2021-04-01T00:00:00.000Z" endDate="2021-04-23T00:00:00.000Z" />
+        <Label content="6" startDate="2021-04-01T00:00:00.000Z" endDate="2021-04-23T00:00:00.000Z" />
       </div>
-    </ScheduleLabel>
+    </StyledSchedule>
   )
 }
 

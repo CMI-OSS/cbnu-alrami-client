@@ -10,8 +10,10 @@
   --footer-gray: #616262;
   --footer-border: #dfdfe0;
   --schedule-background: #f8f8f8;
+  --schedule-gray: #b1b1b1;
   --menu-box-shadow: 0 0.125rem 0.3125rem rgb(0 0 0 / 12%);
   --floating-box-shadow: 0 0.225rem 0.4125rem rgb(0 0 0 / 20%);
   --name-red: #8a0000;
+  --label-red: #9e0606;
   --button-red: #e75151;
 }
