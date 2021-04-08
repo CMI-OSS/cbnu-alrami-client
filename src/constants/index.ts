@@ -14,3 +14,13 @@ export enum CafeteriaNames {
   MilkWay = '은하수식당',
   Hanbit = '한빛식당',
 }
+
+export enum Days{
+  Sunday='일',
+  Monday='월',
+  Thuesday='화',
+  Wednesday='수',
+  Thursday='목',
+  Friday='금',
+  Saturday='토',
+}

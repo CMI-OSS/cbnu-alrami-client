@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client'
 
-export const GET_DATE_STATE = gql`
+export const GET_CAFETERIA_DATE_STATE = gql`
   query GetDate {
-    date @client
+    cafeteriaDate @client
   }
 `

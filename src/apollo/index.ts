@@ -1,5 +1,5 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client'
-import { date, cafeteriaName, resturantLocationName } from './field'
+import { cafeteriaDate, calendarDate, cafeteriaName, resturantLocationName } from './field'
 
 export const client = new ApolloClient({
   uri: 'http://172.30.1.31:4000/graphql',
@@ -7,7 +7,8 @@ export const client = new ApolloClient({
     typePolicies: {
       Query: {
         fields: {
-          date,
+          cafeteriaDate,
+          calendarDate,
           cafeteriaName,
           resturantLocationName,
         },

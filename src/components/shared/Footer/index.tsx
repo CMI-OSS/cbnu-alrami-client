@@ -6,7 +6,7 @@ import { AiOutlineHome, AiOutlineNotification } from 'react-icons/ai'
 import { BsThreeDots } from 'react-icons/bs'
 
 function Footer() {
-  const pathName = useLocation().pathname
+const pathName = useLocation().pathname
 
   return (
     <StyledFooter>
@@ -16,8 +16,8 @@ function Footer() {
           <p>공지사항</p>
         </div>
       </Link>
-      <Link to="/calendar">
-        <div className={pathName === '/calendar' ? 'active' : undefined}>
+      <Link to="/schedule">
+        <div className={pathName === '/schedule' ? 'active' : undefined}>
           <IoCalendarClearOutline className="icon" />
           <p>학사일정</p>
         </div>
