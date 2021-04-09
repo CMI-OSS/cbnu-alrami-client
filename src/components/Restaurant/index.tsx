@@ -8,6 +8,7 @@ import Shop from './Shop'
 import Loading from '@components/shared/Loading'
 import { RestaurantLocationNames } from '@src/constants'
 import { GET_LOCATION_STATE, GET_RESTAURANTS_BY_LOCATION } from '@src/apollo/quries'
+import { RiMap2Line } from 'react-icons/ri'
 
 export interface Menu {
   menu: string
@@ -50,6 +51,7 @@ function Restaurant() {
 
   return (
     <StyledRestaurant>
+      <RiMap2Line />
       <div className="names">
         {NAMES.map(name => (
           <Name key={name} {...{ name }} />
