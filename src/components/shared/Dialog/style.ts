@@ -10,6 +10,9 @@ const Dialog = styled.div`
   background-color: white;
   z-index: 1;
   transition: 0.2s;
+  min-height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
 
   &.open {
     left: 0px;
@@ -24,6 +27,7 @@ const Dialog = styled.div`
     background: #fff;
     width: 100%;
     text-align: center;
+    z-index: 1;
 
     .title {
       font-size: 1.2rem;

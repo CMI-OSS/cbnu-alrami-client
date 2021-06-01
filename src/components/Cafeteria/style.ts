@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 const Cafeteria = styled.div`
-  padding: 1rem;
   padding-bottom: 5rem;
-
+  background: #fff;
+  
   .nearby {
     display: flex;
     font-size: 0.8rem;

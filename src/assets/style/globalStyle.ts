@@ -189,4 +189,10 @@ export const GlobalStyle = createGlobalStyle`
     textarea:focus {
     outline: none;
     }
+
+    button{
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    }
 `

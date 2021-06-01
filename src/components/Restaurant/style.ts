@@ -10,12 +10,17 @@ const Restaurant = styled.div`
     top: 3.55rem;
     background-color: #fff;
     z-index: 1;
-    
+
     .arrow {
       font-size: 2rem;
       margin-left: 1rem;
       margin-right: 0.5rem;
       margin-top: 0.1rem;
+    }
+
+    .map {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
     }
 
     .names::-webkit-scrollbar {

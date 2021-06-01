@@ -10,5 +10,7 @@ const Menu = styled.div`
   padding: 15px;
   line-height: 1.5rem;
   margin-bottom: 1.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 `
 export default Menu

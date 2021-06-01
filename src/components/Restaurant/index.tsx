@@ -8,6 +8,7 @@ import Shop from './Shop'
 import Loading from '@components/shared/Loading'
 import { RestaurantLocationNames } from '@src/constants'
 import { GET_LOCATION_STATE, GET_RESTAURANTS_BY_LOCATION } from '@src/apollo/quries'
+import { RiMap2Line } from 'react-icons/ri'
 
 export interface Menu {
   menu: string
@@ -54,13 +55,16 @@ function Restaurant() {
         {NAMES.map(name => (
           <Name key={name} {...{ name }} />
         ))}
+        <button type="button" className="map" onClick={() => openDialog()}>
+          <RiMap2Line />
+        </button>
       </div>
       <div onClick={() => openDialog()}>
         <img src="/img/map.png" alt="지도" width="100%" />
       </div>
       <div className="shop-list">
-        {restaurants.restaurants.map(restaurant => (
-          <Shop key={restaurant.name} {...{ restaurant }} />
+        {restaurants.restaurants.map((restaurant, index) => (
+          <Shop key={index} {...{ restaurant }} />
         ))}
       </div>
       <MapDialog openCallback={mapOpenCallback} />

@@ -12,7 +12,7 @@ const Name = styled.div`
   display: flex;
   justify-content: center;
   margin-right: 1rem;
-  margin-bottom: 1.3rem;
+  margin-bottom: 0.3rem;
   height: 1rem;
 
   &.active {
