@@ -19,8 +19,8 @@ function Detail({ restaurant, openCallback }: DetailProps) {
       </div>
       <section>
         <div className="menu-detail">
-          {restaurant.details.map(detail => (
-            <div className="detail">
+          {restaurant.details.map((detail, index) => (
+            <div className="detail" key={index}>
               <div className="menu">{detail.menu}</div>
               <div className="line" />
               <div className="price">{detail.price.toLocaleString()}원</div>
