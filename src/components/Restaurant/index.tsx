@@ -51,18 +51,20 @@ function Restaurant() {
 
   return (
     <StyledRestaurant>
-      <RiMap2Line />
       <div className="names">
         {NAMES.map(name => (
           <Name key={name} {...{ name }} />
         ))}
+        <button type="button" className="map" onClick={() => openDialog()}>
+          <RiMap2Line />
+        </button>
       </div>
       <div onClick={() => openDialog()}>
         <img src="/img/map.png" alt="지도" width="100%" />
       </div>
       <div className="shop-list">
-        {restaurants.restaurants.map(restaurant => (
-          <Shop key={restaurant.name} {...{ restaurant }} />
+        {restaurants.restaurants.map((restaurant, index) => (
+          <Shop key={index} {...{ restaurant }} />
         ))}
       </div>
       <MapDialog openCallback={mapOpenCallback} />
