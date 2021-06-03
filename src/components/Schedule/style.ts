@@ -5,6 +5,7 @@ const Schedule = styled.div`
     background-color: var(--schedule-background);
     overflow-y: auto;
     padding: 1rem;
+    min-height: calc(100vh - 358.374px);
 
     p {
       color: var(--schedule-gray);
